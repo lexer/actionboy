@@ -1,0 +1,16 @@
+h1 Action Link Sample
+
+a#link1(href='/actionlink', data-method='post', data-type='json') foo
+
+
+script(type='text/javascript')
+  $(function() {
+    $('#link1').click(function(e){
+      $(this).invoke(function(xhr, settings) {
+        // do some staff before send here
+      }).success(function(data){
+        alert(data.foo);
+      });
+      e.preventDefault()
+    });
+  });

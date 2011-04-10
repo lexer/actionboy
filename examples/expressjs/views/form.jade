@@ -1,0 +1,19 @@
+h1 Form Sample
+
+form#form1(action='/form', method='post')
+  input(type="text",name="user[name]")
+  input(type="text",name="user[email]")
+  input(type='submit', value='Submit')
+
+
+script(type='text/javascript')
+  $(function() {
+    $('#form1').submit(function(e){
+      $(this).invoke(function(xhr, settings) {
+       // do some staff before send her        
+      }).success(function(data){
+        alert('Form submited');
+      });
+      e.preventDefault()
+    });
+  });
