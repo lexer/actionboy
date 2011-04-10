@@ -1,3 +1,38 @@
-Action Boy is jquery plugin that provides platform independent unobtrusive style for links and form
+Action Boy is jquery plugin that provides platform independent unobtrusive style for links and forms.
 
+actionlink.jade
 
+```jade
+
+a#link1(href='/actionlink', data-method='post', data-type='json') foo
+
+script(type='text/javascript')
+  $(function() {
+    $('#link1').click(function(e){
+      $(this).invoke().success(function(data){
+
+      });
+      e.preventDefault()
+    });
+  });
+```
+
+forms.jade
+
+```jade
+
+form#form1(action='/form', method='post')
+  input(type="text",name="user[name]")
+  input(type="text",name="user[email]")
+  input(type='submit', value='Submit')
+
+script(type='text/javascript')
+  $(function() {
+    $('#form1').submit(function(e){
+      $(this).invoke().success(function(data){
+
+      });
+      e.preventDefault()
+    });
+  });
+```
