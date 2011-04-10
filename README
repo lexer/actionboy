@@ -2,8 +2,6 @@ Action Boy is jquery plugin that provides platform independent unobtrusive style
 
 actionlink.jade
 
-```jade
-
 a#link1(href='/actionlink', data-method='post', data-type='json') foo
 
 script(type='text/javascript')
@@ -15,11 +13,8 @@ script(type='text/javascript')
       e.preventDefault()
     });
   });
-```
 
 forms.jade
-
-```jade
 
 form#form1(action='/form', method='post')
   input(type="text",name="user[name]")
@@ -35,4 +30,4 @@ script(type='text/javascript')
       e.preventDefault()
     });
   });
-```
+
