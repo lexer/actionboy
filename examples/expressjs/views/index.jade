@@ -4,7 +4,9 @@ a.button(href='/foo', data-method='post', data-type='json') foo
 script(type='text/javascript')
   $(function() {
     $('.button').click(function(e){
-      $(this).invoke().success(function(data){
+      $(this).invoke(function(xhr, settings) {
+        //settings.data = "foo"
+      }).success(function(data){
         alert(data.success);
       });
       e.preventDefault()
